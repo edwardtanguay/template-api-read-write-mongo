@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import express from 'express';
 import cors from 'cors';
-import { employeeRouter } from './routers/employeeRouter';
+import { todoRouter } from './routers/todoRouter';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 	<body>
 	<h1>${process.env.APP_TITLE}</h1>
 	<ul>
-		<li>GET all employees - <a href="/employees">/employees</a></li>
+		<li>GET all todos - <a href="/todos">/todos</a></li>
 	</ul>
 	</body>
 </html>
@@ -24,4 +24,4 @@ app.get('/', (req, res) => {
 
 });
 
-app.use('/employees', employeeRouter);
+app.use('/todos', todoRouter);
